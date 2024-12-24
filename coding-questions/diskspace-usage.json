@@ -1,0 +1,59 @@
+{
+    "uid": "diskspace-usage",
+    "testStrategy": "SINGLE_TEST",
+    "name": "Diskspace Usage",
+    "version": 0,
+    "releaseDate": "2021-05-24T00:00:00Z",
+    "category": "Bash",
+    "difficulty": 0,
+    "acl": {
+        "isFree": true,
+        "isFreeForStudents": false,
+        "productRequired": [
+            "infraexpert"
+        ],
+        "isAvailable": true
+    },
+    "languagesSupported": [
+        "bash"
+    ],
+    "submissionStatistics": {
+        "correctCount": 0,
+        "failureCount": 0
+    },
+    "assessmentSummary": null,
+    "video": {
+        "vimeoId": "870380153",
+        "duration": 0,
+        "annotations": [],
+        "instructor": "",
+        "overviewTime": null,
+        "codeWalkthroughTime": null
+    },
+    "prompt": "<div class=\"html\">\n  <p>\n    Write a script to monitor the disk space usage on a server and send an email\n    notification if it exceeds a certain threshold.\n  </p>\n  <p>\n  If the disk space usage exceeds 90%, send an email notification to the administrator with the following information:\n  - Server name\n  - Current disk usage percentage\n  </p>\n  <p>\n    If the disk space usage is at or below 90%, your script should print out:\n    <pre>Disk usage is below 90%.</pre>\n  </p>\n</div>",
+    "hints": [],
+    "spaceTime": "",
+    "notes": "",
+    "isSlowExecution": false,
+    "isLongOutput": false,
+    "visualization": {
+        "inputType": null,
+        "outputType": null
+    },
+    "resources": {
+        "bash": {
+            "language": "bash",
+            "solutionsDisabled": false,
+            "startingCode": "#! /bin/bash\n\nTHRESHOLD=90\n\n# Write your code here.",
+            "solutions": [
+                "#! /bin/bash\n\n# Copyright \u00a9 2024 AlgoExpert LLC. All rights reserved.\n\n\n# Set the threshold for disk usage as a percentage\nTHRESHOLD=90\n\n# Check disk usage with df command\nDISK_USAGE=$(df -h / | awk 'NR==2{print $5}' | sed 's/%//')\n\n# Check if the disk usage exceeds the threshold\nif [ \"$DISK_USAGE\" -gt \"$THRESHOLD\" ]\nthen\n  # Send an email notification using the mail command\n  echo \"Warning: Disk usage on server $HOSTNAME has exceeded $THRESHOLD%.\" | mail -s \"Disk Space Alert\" user@example.com\n  exit 1\nelse\n  echo \"Disk usage is below $THRESHOLD%.\"\n  exit 0\nfi\n"
+            ],
+            "sandboxCode": "# This file is initialized with a code version of some of\n# this question's test cases. Feel free to add, edit, or\n# remove test cases in this file as you see fit!\n\n",
+            "unitTests": ""
+        }
+    },
+    "customInputVars": [],
+    "tests": [],
+    "jsonTests": [],
+    "changelog": []
+}

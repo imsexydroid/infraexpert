@@ -1,0 +1,59 @@
+{
+    "uid": "netstat-routing",
+    "testStrategy": "SINGLE_TEST",
+    "name": "Netstat Routing",
+    "version": 0,
+    "releaseDate": "2021-05-24T00:00:00Z",
+    "category": "Bash",
+    "difficulty": 0,
+    "acl": {
+        "isFree": false,
+        "isFreeForStudents": false,
+        "productRequired": [
+            "infraexpert"
+        ],
+        "isAvailable": true
+    },
+    "languagesSupported": [
+        "bash"
+    ],
+    "submissionStatistics": {
+        "correctCount": 0,
+        "failureCount": 0
+    },
+    "assessmentSummary": null,
+    "video": {
+        "vimeoId": "868155665",
+        "duration": 0,
+        "annotations": [],
+        "instructor": "Delia Lazarescu",
+        "overviewTime": null,
+        "codeWalkthroughTime": null
+    },
+    "prompt": "<div class=\"html\">\n    <p>\n        Write a bash script that displays the routing table. Additionally, the script should handle potential errors and display a custom error message if the script fails. Finally, ensure that the script exits gracefully without errors, even if a command within the script fails.\n    </p>\n</div>",
+    "hints": [],
+    "spaceTime": "",
+    "notes": "",
+    "isSlowExecution": false,
+    "isLongOutput": false,
+    "visualization": {
+        "inputType": null,
+        "outputType": null
+    },
+    "resources": {
+        "bash": {
+            "language": "bash",
+            "solutionsDisabled": false,
+            "startingCode": "#! /bin/bash\n\n# Write your code here.",
+            "solutions": [
+                "#! /bin/bash\n\n# Copyright \u00a9 2024 AlgoExpert LLC. All rights reserved.\n\n\nset -eo pipefail\n\nif ! output=$(netstat -r); then\n    echo \"Error: Failed to execute 'netstat' command.\"\n    exit 1\nfi\n\necho \"$output\"\nexit 0"
+            ],
+            "sandboxCode": "# This file is initialized with a code version of some of\n# this question's test cases. Feel free to add, edit, or\n# remove test cases in this file as you see fit!\n\n",
+            "unitTests": ""
+        }
+    },
+    "customInputVars": [],
+    "tests": [],
+    "jsonTests": [],
+    "changelog": []
+}

@@ -1,0 +1,61 @@
+{
+    "uid": "last-3-records",
+    "testStrategy": "SINGLE_TEST",
+    "name": "Last 3 Records",
+    "version": 0,
+    "releaseDate": "0001-01-01T00:00:00Z",
+    "category": "SQL",
+    "difficulty": 0,
+    "acl": {
+        "isFree": false,
+        "isFreeForStudents": false,
+        "productRequired": [
+            "infraexpert"
+        ],
+        "isAvailable": true
+    },
+    "languagesSupported": [
+        "sql"
+    ],
+    "submissionStatistics": {
+        "correctCount": 0,
+        "failureCount": 0
+    },
+    "assessmentSummary": null,
+    "video": {
+        "vimeoId": "868975923",
+        "duration": 0,
+        "annotations": [],
+        "instructor": "Delia Lazarescu",
+        "overviewTime": null,
+        "codeWalkthroughTime": null
+    },
+    "prompt": "<div class=\"html\">\n  <p>\n    Given the <span>employee_table</span>, the <span>manager_table</span>, and\n    the <span>department_table</span> below, the latter two of which are related\n    to the former by their <span>manager_id</span> and by their\n    <span>department_id</span>, respectively, write a query that returns the\n    last 3 records from the <span>employee_table</span> table along with their\n    relevant <span>manager_name</span> (if available) and their relevant\n    <span>department_name</span>.\n  </p>\n  <p>\n    The returned table should look like the <span>employee_table</span>, except\n    its last two columns should be <span>manager_name</span> and\n    <span>department_name</span> instead of <span>manager_id</span> and\n    <span>department_id</span>.\n  </p>\n  <h3>Sample Input</h3>\n  <pre>\n<span class=\"CodeEditor-promptParameter\">employee_table</span>\n+--------+----------+--------+------------+---------------+\n| emp_id | emp_name | emp_no | manager_id | department_id |\n+--------+----------+--------+------------+---------------+\n| 1      | John     | J001   | 3          | 2             |\n| 2      | Mary     | M001   | 3          | 1             |\n| 3      | Bob      | B001   | 4          | 2             |\n| 4      | Alice    | A001   | NULL       | 1             |\n| 5      | Bill     | B002   | 3          | 2             |\n| 6      | Joe      | J002   | 4          | 2             |\n+--------+----------+--------+------------+---------------+\n\n<span class=\"CodeEditor-promptParameter\">manager_table</span>\n+------------+--------------+\n| manager_id | manager_name |\n+------------+--------------+\n| 3          | Jim          |\n| 4          | Jane         |\n+------------+--------------+\n\n<span class=\"CodeEditor-promptParameter\">department_table</span>\n+---------------+-----------------+\n| department_id | department_name |\n+---------------+-----------------+\n| 1             | Sales           |\n| 2             | Engineering     |\n+---------------+-----------------+\n</pre>\n  <h3>Sample Output</h3>\n  <pre>\n+--------+----------+--------+--------------+-----------------+\n| emp_id | emp_name | emp_no | manager_name | department_name |\n+--------+----------+--------+--------------+-----------------+\n| 6      | Joe      | J002   | Jane         | Engineering     |\n| 5      | Bill     | B002   | Jim          | Engineering     |\n| 4      | Alice    | A001   | NULL         | Sales           |\n+--------+----------+--------+--------------+-----------------+\n</pre\n  >\n</div>",
+    "hints": [
+        "<p>\n  Sample hint\n</p>"
+    ],
+    "spaceTime": "",
+    "notes": "",
+    "isSlowExecution": false,
+    "isLongOutput": false,
+    "visualization": {
+        "inputType": null,
+        "outputType": null
+    },
+    "resources": {
+        "sql": {
+            "language": "sql",
+            "solutionsDisabled": false,
+            "startingCode": "-- Write your code here.\n",
+            "solutions": [
+                "/* Copyright \u00a9 2024 AlgoExpert LLC. All rights reserved. */\n\nSELECT e.emp_id, e.emp_name, e.emp_no, m.manager_name, d.department_name\nFROM (SELECT emp_id, emp_name, emp_no, manager_id, department_id\n      FROM employee_table\n      ORDER BY emp_id DESC\n          LIMIT 3)\n         AS e\n         LEFT JOIN manager_table AS m ON e.manager_id = m.manager_id\n         LEFT JOIN department_table AS d ON e.department_id = d.department_id\n"
+            ],
+            "sandboxCode": "/* This file is initialized with a code version of some of\nthis question's test cases. Feel free to add, edit, or\nremove test cases in this file as you see fit! */\n\n",
+            "unitTests": ""
+        }
+    },
+    "customInputVars": [],
+    "tests": [],
+    "jsonTests": [],
+    "changelog": []
+}

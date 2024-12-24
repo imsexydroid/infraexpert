@@ -1,0 +1,61 @@
+{
+    "uid": "top-10-customers",
+    "testStrategy": "SINGLE_TEST",
+    "name": "Top 10 Customers",
+    "version": 0,
+    "releaseDate": "0001-01-01T00:00:00Z",
+    "category": "SQL",
+    "difficulty": 0,
+    "acl": {
+        "isFree": false,
+        "isFreeForStudents": false,
+        "productRequired": [
+            "infraexpert"
+        ],
+        "isAvailable": true
+    },
+    "languagesSupported": [
+        "sql"
+    ],
+    "submissionStatistics": {
+        "correctCount": 0,
+        "failureCount": 0
+    },
+    "assessmentSummary": null,
+    "video": {
+        "vimeoId": "864246059",
+        "duration": 0,
+        "annotations": [],
+        "instructor": "Delia Lazarescu",
+        "overviewTime": null,
+        "codeWalkthroughTime": null
+    },
+    "prompt": "<div class=\"html\">\n  <p>\n    Given the <span>order_table</span> below, write a query that returns the 10\n    <span>customer_id</span>s with the highest total <span>amount</span>s,\n    sorted in descending order based on their total <span>amount</span>s.\n  </p>\n  <p>\n    The returned table should have two columns: <span>customer_id</span> and\n    <span>amount</span>, where <span>amount</span> is the total of each\n    <span>customer_id</span>'s <span>amount</span>s.\n  </p>\n  <h3>Sample Input</h3>\n  <pre>\n<span class=\"CodeEditor-promptParameter\">order_table</span>\n+----+-------------+--------+\n| id | customer_id | amount |\n+----+-------------+--------+\n| 1  | 1           | 100    |\n| 2  | 1           | 50     |\n| 3  | 2           | 75     |\n| 4  | 3           | 200    |\n| 5  | 2           | 125    |\n| 6  | 1           | 75     |\n| 7  | 3           | 150    |\n+----+-------------+--------+\n</pre>\n  <h3>Sample Output</h3>\n  <pre>\n+-------------+--------+\n| customer_id | amount |\n+-------------+--------+\n| 3           | 350    |\n| 1           | 225    |\n| 2           | 200    |\n+-------------+--------+\n</pre\n  >\n</div>",
+    "hints": [
+        "<p>\n  Sample hint\n</p>"
+    ],
+    "spaceTime": "",
+    "notes": "",
+    "isSlowExecution": false,
+    "isLongOutput": false,
+    "visualization": {
+        "inputType": null,
+        "outputType": null
+    },
+    "resources": {
+        "sql": {
+            "language": "sql",
+            "solutionsDisabled": false,
+            "startingCode": "-- Write your code here.\n",
+            "solutions": [
+                "/* Copyright \u00a9 2024 AlgoExpert LLC. All rights reserved. */\n\nSELECT customer_id, SUM(amount) as amount\nFROM order_table\nGROUP BY customer_id\nORDER BY amount DESC\n    LIMIT 10;\n"
+            ],
+            "sandboxCode": "/* This file is initialized with a code version of some of\nthis question's test cases. Feel free to add, edit, or\nremove test cases in this file as you see fit! */\n\n",
+            "unitTests": ""
+        }
+    },
+    "customInputVars": [],
+    "tests": [],
+    "jsonTests": [],
+    "changelog": []
+}

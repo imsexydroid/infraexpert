@@ -1,0 +1,59 @@
+{
+    "uid": "count-files",
+    "testStrategy": "SINGLE_TEST",
+    "name": "Count Files",
+    "version": 0,
+    "releaseDate": "2021-05-24T00:00:00Z",
+    "category": "Bash",
+    "difficulty": 0,
+    "acl": {
+        "isFree": false,
+        "isFreeForStudents": false,
+        "productRequired": [
+            "infraexpert"
+        ],
+        "isAvailable": true
+    },
+    "languagesSupported": [
+        "bash"
+    ],
+    "submissionStatistics": {
+        "correctCount": 0,
+        "failureCount": 0
+    },
+    "assessmentSummary": null,
+    "video": {
+        "vimeoId": "868155539",
+        "duration": 0,
+        "annotations": [],
+        "instructor": "Delia Lazarescu",
+        "overviewTime": null,
+        "codeWalkthroughTime": null
+    },
+    "prompt": "<div class=\"html\">\n    <p>\n        Write a script to count the number of files with a specific extension in a given directory and its subdirectories, and save the result to a text file. The script should take the directory path and file extension as inputs. Assume you have file permissions to access the files within the directory.\n    </p>\n    <h3>Sample Input</h3>\n    <pre>\n<span class=\"CodeEditor-promptParameter\">directory_path</span> = \"/path/to/directory\"\n<span class=\"CodeEditor-promptParameter\">file_extension</span> = \".txt\"\n<span class=\"CodeEditor-promptParameter\">output_file</span> = \"result.txt\"\n</pre>\n    <h3>Sample Output</h3>\n    <pre>\n$ cat result.txt\nNumber of .txt files: 4\n</pre>\n</div>",
+    "hints": [],
+    "spaceTime": "",
+    "notes": "",
+    "isSlowExecution": false,
+    "isLongOutput": false,
+    "visualization": {
+        "inputType": null,
+        "outputType": null
+    },
+    "resources": {
+        "bash": {
+            "language": "bash",
+            "solutionsDisabled": false,
+            "startingCode": "#! /bin/bash\n\ndirectory_path=\"$1\"\nfile_extension=\"$2\"\noutput_file=\"$3\"\nfile_count=0\n\nusage() {\n  echo \"Usage: $0 arg1 arg2 arg3 ;  where:\"\n  echo \"    arg1: path to directory being checked\"\n  echo \"    arg2: file extension\"\n  echo \"    arg3: output file to store results in\"\n} \n \n# Write your code here.",
+            "solutions": [
+                "#! /bin/bash\n\n# Copyright \u00a9 2024 AlgoExpert LLC. All rights reserved.\n\n\ndirectory_path=\"$1\"\nfile_extension=\"$2\"\noutput_file=\"$3\"\nfile_count=0\n\nusage() {\n  echo \"Usage: $0 arg1 arg2 arg3 ;  where:\"\n  echo \"    arg1: path to directory being checked\"\n  echo \"    arg2: file extension\"\n  echo \"    arg3: output file to store results in\"\n}\n\nfile_count=$(find $directory_path -type f -name \"*${file_extension}\" | wc -l)\n\necho $file_count\n\necho \"Number of $file_extension files: $file_count\" > \"$output_file\"\n\n"
+            ],
+            "sandboxCode": "# This file is initialized with a code version of some of\n# this question's test cases. Feel free to add, edit, or\n# remove test cases in this file as you see fit!\n\n",
+            "unitTests": ""
+        }
+    },
+    "customInputVars": [],
+    "tests": [],
+    "jsonTests": [],
+    "changelog": []
+}

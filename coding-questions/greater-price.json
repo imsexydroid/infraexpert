@@ -1,0 +1,62 @@
+{
+    "uid": "greater-price",
+    "testStrategy": "SINGLE_TEST",
+    "name": "Greater Price",
+    "version": 0,
+    "releaseDate": "0001-01-01T00:00:00Z",
+    "category": "SQL",
+    "difficulty": 0,
+    "acl": {
+        "isFree": false,
+        "isFreeForStudents": false,
+        "productRequired": [
+            "infraexpert"
+        ],
+        "isAvailable": true
+    },
+    "languagesSupported": [
+        "sql"
+    ],
+    "submissionStatistics": {
+        "correctCount": 0,
+        "failureCount": 0
+    },
+    "assessmentSummary": null,
+    "video": {
+        "vimeoId": "817071457",
+        "duration": 0,
+        "annotations": [],
+        "instructor": "Delia Lazarescu",
+        "overviewTime": null,
+        "codeWalkthroughTime": null
+    },
+    "prompt": "<div class=\"html\">\n  <p>\n    Given the <span>product_table</span> below, write a query that returns\n    the products with a <span>price</span> greater than or equal to $50 and less\n    than or equal to $100, sorted in ascending order based on their\n    <span>price</span>.\n  </p>\n  <p>The returned table should look like the <span>product_table</span>.</p>\n  <h3>Sample Input</h3>\n  <pre>\n<span class=\"CodeEditor-promptParameter\">product_table</span>\n+----+-----------+-------+\n| id | name      | price |\n+----+-----------+-------+\n| 1  | Product A | 30    |\n| 2  | Product B | 50    |\n| 3  | Product C | 75    |\n| 4  | Product D | 100   |\n| 5  | Product E | 150   |\n+----+-----------+-------+\n</pre>\n\n  <h3>Sample Output</h3>\n  <pre>\n+----+-----------+-------+\n| id | name      | price |\n+----+-----------+-------+\n| 2  | Product B | 50    |\n| 3  | Product C | 75    |\n| 4  | Product D | 100   |\n+----+-----------+-------+\n</pre\n  >\n</div>",
+    "hints": [
+        "<p>\n  Sample hint\n</p>"
+    ],
+    "spaceTime": "",
+    "notes": "",
+    "isSlowExecution": false,
+    "isLongOutput": false,
+    "visualization": {
+        "inputType": null,
+        "outputType": null
+    },
+    "resources": {
+        "sql": {
+            "language": "sql",
+            "solutionsDisabled": false,
+            "startingCode": "-- Write your code here.\n",
+            "solutions": [
+                "/* Copyright \u00a9 2024 AlgoExpert LLC. All rights reserved. */\n\nSELECT id, name, price\nFROM product_table\nWHERE price >= 50 AND price <= 100\nORDER BY price ASC;",
+                "/* Copyright \u00a9 2024 AlgoExpert LLC. All rights reserved. */\n\nSELECT id, name, price\nFROM product_table\nWHERE price BETWEEN 50 AND 100\nORDER BY price ASC;"
+            ],
+            "sandboxCode": "/* This file is initialized with a code version of some of\nthis question's test cases. Feel free to add, edit, or\nremove test cases in this file as you see fit! */\n\n",
+            "unitTests": ""
+        }
+    },
+    "customInputVars": [],
+    "tests": [],
+    "jsonTests": [],
+    "changelog": []
+}

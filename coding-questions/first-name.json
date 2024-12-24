@@ -1,0 +1,61 @@
+{
+    "uid": "first-name",
+    "testStrategy": "SINGLE_TEST",
+    "name": "First Name",
+    "version": 0,
+    "releaseDate": "0001-01-01T00:00:00Z",
+    "category": "SQL",
+    "difficulty": 0,
+    "acl": {
+        "isFree": false,
+        "isFreeForStudents": false,
+        "productRequired": [
+            "infraexpert"
+        ],
+        "isAvailable": true
+    },
+    "languagesSupported": [
+        "sql"
+    ],
+    "submissionStatistics": {
+        "correctCount": 0,
+        "failureCount": 0
+    },
+    "assessmentSummary": null,
+    "video": {
+        "vimeoId": "864246011",
+        "duration": 0,
+        "annotations": [],
+        "instructor": "Delia Lazarescu",
+        "overviewTime": null,
+        "codeWalkthroughTime": null
+    },
+    "prompt": "<div class=\"html\">\n  <p>\n    Given the <span>employee_table</span> and the\n    <span>department_table</span> below, which are related by their\n    <span>department_id</span>, write a query that returns the Sales employees\n    with a <span>name</span> beginning with \"B\" and with a\n    <span>salary</span> greater than $50,000.\n  </p>\n  <p>The returned table should look like the <span>employee_table</span>.</p>\n  <h3>Sample Input</h3>\n  <pre>\n<span class=\"CodeEditor-promptParameter\">employee_table</span>\n+----+-------------+--------+---------------+\n| id | name        | salary | department_id |\n+----+-------------+--------+---------------+\n| 1  | John Smith  | 50000  | 1             |\n| 2  | Jane Doe    | 60000  | 1             |\n| 3  | Bob Jones   | 70000  | 2             |\n| 4  | Alice Lee   | 55000  | 2             |\n| 5  | Ben Green   | 60000  | 1             |\n| 6  | Brandon Kim | 65000  | 3             |\n+----+-------------+--------+---------------+\n\n<span class=\"CodeEditor-promptParameter\">department_table</span>\n+---------------+-----------------+\n| department_id | department_name |\n+---------------+-----------------+\n| 1             | Sales           |\n| 2             | Marketing       |\n| 3             | Engineering     |\n+---------------+-----------------+\n</pre>\n  <h3>Sample Output</h3>\n  <pre>\n+----+-----------+--------+---------------+\n| id | name      | salary | department_id |\n+----+-----------+--------+---------------+\n| 5  | Ben Green | 60000  | 1             |\n+----+-----------+--------+---------------+\n</pre\n  >\n</div>",
+    "hints": [
+        "<p>\n  Sample hint\n</p>"
+    ],
+    "spaceTime": "",
+    "notes": "",
+    "isSlowExecution": false,
+    "isLongOutput": false,
+    "visualization": {
+        "inputType": null,
+        "outputType": null
+    },
+    "resources": {
+        "sql": {
+            "language": "sql",
+            "solutionsDisabled": false,
+            "startingCode": "-- Write your code here.\n",
+            "solutions": [
+                "/* Copyright \u00a9 2024 AlgoExpert LLC. All rights reserved. */\n\nSELECT e.id, e.name, e.salary, e.department_id\nFROM employee_table e\n         JOIN department_table d\n              ON e.department_id = d.department_id\nWHERE e.name LIKE 'B%'\n  AND e.salary > 50000\n  AND d.department_name = 'Sales';\n"
+            ],
+            "sandboxCode": "/* This file is initialized with a code version of some of\nthis question's test cases. Feel free to add, edit, or\nremove test cases in this file as you see fit! */\n\n",
+            "unitTests": ""
+        }
+    },
+    "customInputVars": [],
+    "tests": [],
+    "jsonTests": [],
+    "changelog": []
+}

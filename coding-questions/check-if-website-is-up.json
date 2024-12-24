@@ -1,0 +1,59 @@
+{
+    "uid": "check-if-website-is-up",
+    "testStrategy": "SINGLE_TEST",
+    "name": "Check If Website Is Up",
+    "version": 0,
+    "releaseDate": "2021-05-24T00:00:00Z",
+    "category": "Bash",
+    "difficulty": 0,
+    "acl": {
+        "isFree": false,
+        "isFreeForStudents": false,
+        "productRequired": [
+            "infraexpert"
+        ],
+        "isAvailable": true
+    },
+    "languagesSupported": [
+        "bash"
+    ],
+    "submissionStatistics": {
+        "correctCount": 0,
+        "failureCount": 0
+    },
+    "assessmentSummary": null,
+    "video": {
+        "vimeoId": "868155581",
+        "duration": 0,
+        "annotations": [],
+        "instructor": "",
+        "overviewTime": null,
+        "codeWalkthroughTime": null
+    },
+    "prompt": "<div class=\"html\">\n    <p>Write a script to check if a website is up or down and send an email notification if it is down.</p>\n    <h3>Input</h3>\n    <p>The script should accept the following input parameters:</p>\n    <ul>\n        <li>The website URL to be checked</li>\n        <li>The email address where the notification will be sent</li>\n    </ul>\n    <h3>Output</h3>\n    <p>The script should send an email notification if the website is down.</p>\n</div>",
+    "hints": [],
+    "spaceTime": "",
+    "notes": "",
+    "isSlowExecution": false,
+    "isLongOutput": false,
+    "visualization": {
+        "inputType": null,
+        "outputType": null
+    },
+    "resources": {
+        "bash": {
+            "language": "bash",
+            "solutionsDisabled": false,
+            "startingCode": "#! /bin/bash\n\nurl=$1\n\n# Write your code here.\n\n",
+            "solutions": [
+                "#! /bin/bash\n\n# Copyright \u00a9 2024 AlgoExpert LLC. All rights reserved.\n\n\nurl=$1\n\nemail_address=\"delia@algoexpert.io\"\n\ncheck_website() {\n  response=$(curl -Is \"$url\" | head -n 1)\n\n  status_code=$(echo \"$response\" | awk '{print $2}')\n\n  if [[ \"$status_code\" -eq 200 || \"$status_code\" -eq 301 ]]; then\n    echo \"Website is up!\"\n  else\n    echo \"Website is down!\"\n  fi\n}\n\nsend_email() {\n  echo \"Wesbite $url is down! \" | mail -s \"Website is down notification\" $email_address\n}\n\ncheck_website"
+            ],
+            "sandboxCode": "# This file is initialized with a code version of some of\n# this question's test cases. Feel free to add, edit, or\n# remove test cases in this file as you see fit!\n\n",
+            "unitTests": ""
+        }
+    },
+    "customInputVars": [],
+    "tests": [],
+    "jsonTests": [],
+    "changelog": []
+}

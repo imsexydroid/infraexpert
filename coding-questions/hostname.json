@@ -1,0 +1,59 @@
+{
+    "uid": "hostname",
+    "testStrategy": "SINGLE_TEST",
+    "name": "Hostname",
+    "version": 0,
+    "releaseDate": "2021-05-24T00:00:00Z",
+    "category": "Bash",
+    "difficulty": 0,
+    "acl": {
+        "isFree": false,
+        "isFreeForStudents": false,
+        "productRequired": [
+            "infraexpert"
+        ],
+        "isAvailable": true
+    },
+    "languagesSupported": [
+        "bash"
+    ],
+    "submissionStatistics": {
+        "correctCount": 0,
+        "failureCount": 0
+    },
+    "assessmentSummary": null,
+    "video": {
+        "vimeoId": "868155631",
+        "duration": 0,
+        "annotations": [],
+        "instructor": "Delia Lazarescu",
+        "overviewTime": null,
+        "codeWalkthroughTime": null
+    },
+    "prompt": "<div class=\"html\">\n    <p>\n        Write a script that prints the hostname of the local machine. The script should save the result in a text file with the specified name. The script should take the output file name as input.\n    </p>\n    <h3>Sample Input</h3>\n    <pre>\n<span class=\"CodeEditor-promptParameter\">output_file</span> = \"hostname_ip.txt\"\n</pre>\n    <h3>Sample Output</h3>\n    <pre>\nText file content:\nHostname: example-hostname\n  </pre>\n</div>",
+    "hints": [],
+    "spaceTime": "",
+    "notes": "",
+    "isSlowExecution": false,
+    "isLongOutput": false,
+    "visualization": {
+        "inputType": null,
+        "outputType": null
+    },
+    "resources": {
+        "bash": {
+            "language": "bash",
+            "solutionsDisabled": false,
+            "startingCode": "#! /bin/bash\n\n# Write your code here.",
+            "solutions": [
+                "#! /bin/bash\n\n# Copyright \u00a9 2024 AlgoExpert LLC. All rights reserved.\n\n\noutput_file=$1\n\nif [[ $# -ne 1 ]]; then\n  echo \"Usage: $0 output_file\"\n  exit 1\nfi\n\n{\n  echo \"Hostname: $(hostname)\"\n} | tee \"$output_file\""
+            ],
+            "sandboxCode": "# This file is initialized with a code version of some of\n# this question's test cases. Feel free to add, edit, or\n# remove test cases in this file as you see fit!\n\n",
+            "unitTests": ""
+        }
+    },
+    "customInputVars": [],
+    "tests": [],
+    "jsonTests": [],
+    "changelog": []
+}

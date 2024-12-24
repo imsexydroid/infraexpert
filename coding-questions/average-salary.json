@@ -1,0 +1,61 @@
+{
+    "uid": "average-salary",
+    "testStrategy": "SINGLE_TEST",
+    "name": "Average Salary",
+    "version": 0,
+    "releaseDate": "0001-01-01T00:00:00Z",
+    "category": "SQL",
+    "difficulty": 0,
+    "acl": {
+        "isFree": false,
+        "isFreeForStudents": false,
+        "productRequired": [
+            "infraexpert"
+        ],
+        "isAvailable": true
+    },
+    "languagesSupported": [
+        "sql"
+    ],
+    "submissionStatistics": {
+        "correctCount": 0,
+        "failureCount": 0
+    },
+    "assessmentSummary": null,
+    "video": {
+        "vimeoId": "864245955",
+        "duration": 0,
+        "annotations": [],
+        "instructor": "Delia Lazarescu",
+        "overviewTime": null,
+        "codeWalkthroughTime": null
+    },
+    "prompt": "<div class=\"html\">\n  <p>\n    Given the <span>employee_table</span> and the\n    <span>department_table</span> below, which are related by their\n    <span>department_id</span>, write a query that returns the departments that\n    have employees, sorted in descending order based on the average\n    <span>salary</span> of their employees.\n  </p>\n  <p>\n    The returned table should have two columns: <span>department_name</span> and\n    <span>average_salary</span>, where <span>average_salary</span> is the\n    average <span>salary</span> of each department's employees.\n  </p>\n  <h3>Sample Input</h3>\n  <pre>\n<span class=\"CodeEditor-promptParameter\">employee_table</span>\n+----+------------+--------+---------------+\n| id | name       | salary | department_id |\n+----+------------+--------+---------------+\n| 1  | John Smith | 50000  | 1             |\n| 2  | Jane Doe   | 60000  | 1             |\n| 3  | Bob Jones  | 70000  | 2             |\n| 4  | Alice Lee  | 55000  | 2             |\n+----+------------+--------+---------------+\n\n<span class=\"CodeEditor-promptParameter\">department_table</span>\n+---------------+-----------------+\n| department_id | department_name |\n+---------------+-----------------+\n| 1             | Sales           |\n| 2             | Engineering     |\n| 3             | Marketing       |\n+---------------+-----------------+\n</pre>\n  <h3>Sample Output</h3>\n  <pre>\n+-----------------+----------------+\n| department_name | average_salary |\n+-----------------+----------------+\n| Engineering     | 62500          |\n| Sales           | 55000          |\n+-----------------+----------------+\n</pre\n  >\n</div>",
+    "hints": [
+        "<p>\n  We don't have data on all of the departments, so don't worry about the departments with no data.\n</p>"
+    ],
+    "spaceTime": "",
+    "notes": "",
+    "isSlowExecution": false,
+    "isLongOutput": false,
+    "visualization": {
+        "inputType": null,
+        "outputType": null
+    },
+    "resources": {
+        "sql": {
+            "language": "sql",
+            "solutionsDisabled": false,
+            "startingCode": "-- Write your code here.",
+            "solutions": [
+                "/* Copyright \u00a9 2024 AlgoExpert LLC. All rights reserved. */\n\nSELECT department_table.department_name, AVG(employee_table.salary) AS average_salary\nFROM employee_table\n         INNER JOIN department_table ON employee_table.department_id = department_table.department_id\nGROUP BY department_table.department_name\nORDER BY average_salary DESC;\n"
+            ],
+            "sandboxCode": "/* This file is initialized with a code version of some of\nthis question's test cases. Feel free to add, edit, or\nremove test cases in this file as you see fit! */\n\n",
+            "unitTests": ""
+        }
+    },
+    "customInputVars": [],
+    "tests": [],
+    "jsonTests": [],
+    "changelog": []
+}
