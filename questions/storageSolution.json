@@ -1,0 +1,45 @@
+{
+    "uid": "storageSolution",
+    "name": "Storage Solution",
+    "acl": {
+        "isFree": false,
+        "isFreeForStudents": false,
+        "productRequired": [
+            "infraexpert"
+        ],
+        "isAvailable": true
+    },
+    "releaseDate": "",
+    "isReleased": true,
+    "video": {
+        "vimeoId": "805381910",
+        "duration": 0,
+        "annotations": [],
+        "instructor": "",
+        "style": null
+    },
+    "prompt": "<p>\n  You are the lead developer at a new e-commerce company. Choose the most\n  suitable storage solution to use for your application and explain why it would\n  be a good fit for the company's needs.\n</p>\n\n<h2>Follow-Up Questions</h2>\n<ol>\n  <li>How will the chosen storage solution handle data scalability and growth in the future?</li>\n  <li>How will data security and data integrity be maintained with the chosen storage solution?</li>\n  <li>How will the chosen storage solution handle high availability and disaster recovery?</li>\n  <li>Can you explain how the chosen storage solution will handle data retrieval and querying needs for the application?</li>\n</ol>",
+    "walkthrough": [
+        {
+            "title": "Choose the most suitable storage solution to use for your application and explain why it would be a good fit for the company's needs.",
+            "content": "<p>When selecting a storage solution, we have several factors to consider:</p>\n<ul>\n  <li>Scalability</li>\n  <li>Data integrity</li>\n  <li>Security</li>\n  <li>Cost-effectiveness</li>\n  <li>Retrieval and querying needs</li>\n</ul>\n<p>For an e-commerce company specifically, these factors are particularly important, as the company will likely be dealing with a large amount of data that needs to be stored securely and accessed quickly.</p>\n<h2>Factors to Consider When Choosing a Storage Solution</h2>\n<h3>Scalability</h3>\n<p>When considering scalability, it is important to choose a solution that can grow with your company's needs. A distributed architecture that allows for horizontal scaling is often a good choice, as it allows for more storage nodes to be added to the system as data storage needs grow. Additionally, data sharding can help distribute data across multiple nodes, improving performance.</p>\n<h3>Data Integrity and Security</h3>\n<p>Data integrity and security are paramount for any company, particularly for e-commerce businesses that deal with sensitive customer information. Encryption of data in transit and at rest, as well as a robust user and access management system, can help ensure data security. Regular backups and disaster recovery features are also important to ensure that data can be recovered in the event of a failure.</p>\n<h3>Cost-effectiveness</h3>\n<p>Cost is always a consideration when choosing a storage solution. It is important to balance the cost of the solution with its scalability and performance. Open source solutions can often be a cost-effective option, but may require more maintenance and support.</p>\n<h3>Retrieval and Querying Needs</h3>\n<p>Retrieval and querying needs are important considerations for any application. Indexing and caching techniques can improve data retrieval performance, while support for SQL-like query languages can allow for complex data querying and analysis. A robust API for integration with the application can also make data access and management easier.</p>"
+        },
+        {
+            "title": "How will the chosen storage solution handle data scalability and growth in",
+            "content": "the future?\n\n<p>The chosen storage solution is designed to handle data scalability and growth\nin the future. The solution is based on a distributed architecture that\nallows for horizontal scaling, which means that more storage nodes can be\nadded to the system as the data storage needs grow. Additionally, the\nsolution utilizes data sharding, which allows for better data distribution\nand improves performance."
+        },
+        {
+            "title": "How will data security and data integrity be maintained with the chosen",
+            "content": "storage solution?\n<p>\nThe chosen storage solution provides multiple security features to\nensure data security and data integrity. Data is encrypted in transit\nand at rest, and access to the data is controlled through a robust user\nand access management system. Additionally, the solution includes\nregular backups and disaster recovery features to ensure that data can\nbe recovered in the event of a failure.\n</p>"
+        },
+        {
+            "title": "How will the chosen storage solution handle high availability and",
+            "content": "disaster recovery?\n<p>\nThe chosen storage solution is designed to handle high availability and\ndisaster recovery. The solution utilizes data replication across\nmultiple nodes to ensure that data can be recovered in the event of a\nfailure. Additionally, the solution includes built-in failover\nmechanisms that automatically switch to a secondary node in the event of\na failure.\n</p>"
+        },
+        {
+            "title": "Can you explain how the chosen storage solution will handle data",
+            "content": "retrieval and querying needs for the application?\n<p>\nThe chosen storage solution is designed to handle data retrieval and\nquerying needs for the application. The solution uses indexing and\ncaching techniques to improve data retrieval performance. Additionally,\nthe solution supports SQL-like query languages, allowing for complex\ndata querying and analysis. This will allow for efficient data retrieval\nand querying for the e-commerce company's needs. Furthermore, the\nsolution provides a robust API for easy integration with the company's\napplication, allowing for seamless data access and management.</p>"
+        }
+    ],
+    "hints": []
+}

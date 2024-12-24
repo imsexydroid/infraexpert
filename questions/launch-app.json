@@ -1,0 +1,57 @@
+{
+    "uid": "launch-app",
+    "name": "Launch App",
+    "acl": {
+        "isFree": false,
+        "isFreeForStudents": false,
+        "productRequired": [
+            "infraexpert"
+        ],
+        "isAvailable": true
+    },
+    "releaseDate": "",
+    "isReleased": true,
+    "video": {
+        "vimeoId": "804381972",
+        "duration": 0,
+        "annotations": [],
+        "instructor": "",
+        "style": null
+    },
+    "prompt": "<p>You are launching your existing web app to the cloud. Explain what things you\n    would consider when making this migration & how you would design the cloud\n    architecture.</p>\n\n<h2>Follow-Up Questions</h2>\n<ol>\n    <li>How do you capacity plan for an app that you are about to launch to the cloud?</li>\n    <li>How do you design this web application for minimal latency?</li>\n    <li>Do you choose Private, Public, or Hybrid cloud and why?</li>\n    <li>Explain when you would want to use vertical or horizontal scaling for your app, with specific use cases.</li>\n    <li>How do you safely rollout schema changes while serving live traffic with high availability?</li>\n    <li>How do you ensure security in the cloud?</li>\n    <li>Design the cloud architecture of what your app might look like in your VPC and how it interacts with the outside world.</li>\n</ol>",
+    "walkthrough": [
+        {
+            "title": "Things to consider:",
+            "content": "<p>\n    This question has many possible conisderations and architectures, and the\n    answer should depend on your probing questions to the interviewer. A\n    possible answer would be the following considerations:\n</p>\n<p>\n    I will containerize the web app components. I will configure the components\n    to be co-located or isolated based on the need of the architecture. I would\n    also\n    configure rate-limiter for the web-app and also integrate authentication and\n    authorization by converting the web app interface to an API interface with\n    policies and policy enforcement mechanism throughout the pipeline.\n    I will ensure that data deletion/archival policies are set and default\n    settings in the cloud are secure for this web apps' needs.\n</p>"
+        },
+        {
+            "title": "How do you capacity plan for this app that you are about to launch to the cloud?",
+            "content": "<p>\n    By doing several round-off calculations on load parameters vis-a-vis\n    the number of users. It becomes handy to have base calculations\n    for the cloud services in terms of latency, throughput, cost etc. These numbers can help us decide initial capacity, after which we would adjust accordingly using automated processes like auto-scaling. \n</p>"
+        },
+        {
+            "title": "How do you design this web application for minimal latency?",
+            "content": "<p>\n    By leveraging CDN, caching, sharding of data by using consistent caching and\n    configuring geo-routing. Furthermore, rate-limiting, authentication and\n    authorization with uptodate policies are crucial to ensure minimal latency.\n</p>"
+        },
+        {
+            "title": "Do you choose Private, Public, or Hybrid cloud and why?",
+            "content": "<p>\n    A hybrid cloud would be more suitable for this app for the following reasons: \n    <ul>\n        <li>\n            <b>1.</b>Utilize the sunk cost in the existing on-premises cloud.\n        </li>\n        <li>\n            <b>2.</b>Using public cloud to optimize cost of\n            buying new resources for seasonal workloads.\n        </li>\n        <li>\n            <b>3.</b>Avoid vendor lock-in by\n            cultivating on cloud-agnostic technology and skills.\n        </li>\n    </ul>\n</p>"
+        },
+        {
+            "title": "Explain when you would want to use vertical or horizontal scaling for your app, with specific use cases.",
+            "content": "<p>\n    I\u2019d use vertical scaling when the use case requires specialized hardware or\n    there\u2019s a legacy application that can\u2019t be horizontally scaled yet. I\u2019d use\n    horizontal scaling to optimize utilization, cost, efficiency and redundancy\n    for reliability. For vertical scaling the use case would be, for example, if this app were a machine\n    learning workload involving high definition images that require GPU for\n    processing. For horizontal scaling the use-case would be processing of batch\n    data for analytics.\n</p>"
+        },
+        {
+            "title": "How do you safely rollout schema changes while serving live traffic with high availability?",
+            "content": "<p>\n    To roll out in such a scenario, we play with an impact percentage such that\n    a new change can only be seen by .01% of the users. We roll out in batches/staged rollouts to ensure the rollout is gradual, graceful, and with no downtime.\n</p>"
+        },
+        {
+            "title": "How do you ensure security in the cloud?",
+            "content": "<p>\n    <p>To name only a few possible ways: </p>\n    <ul>\n        <li>\n            Use multifactor authentication for Principals that are human. \n        </li>\n        <li>\n            Use OAuth2.0\n    and delegation with policy decision making mechanism and policy enforcement\n    mechanism in place. \n        </li>\n        <li>\n            By using a key management service to keep data at rest\n    encrypted and keys recycled based on policies. \n        </li>\n        <li>\n            Use multifactor authentication for Principals that are human. \n        </li>\n        <li>\n            By using TLS encryption for\n    data in transit and terminating encryption channels closest to the\n    interacting party.\n        </li>\n    </ul>\n</p>"
+        },
+        {
+            "title": "Design the cloud architecture of what your app might look like in your VPC and how it interacts with the outside world.",
+            "content": "<p>\n    In the VPC my app will be tiered among frontend, middleware, and data-tier.\n    The frontend would be reachable via a public interface exposed through a\n    load balancer or through an API gateway. There would be a requirement of an\n    internet gateway as well as public NAT gateway would be required. Redundant\n    public NAT gateways would be required to have minimal cross-AZ traffic. The\n    app would interact with the outside-world via an API gateway and DNS\n    routing. Furthermore, it would interact with the outside world using private\n    VPNs or VPC gateway.</p>"
+        }
+    ],
+    "hints": []
+}

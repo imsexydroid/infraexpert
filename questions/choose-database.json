@@ -1,0 +1,45 @@
+{
+    "uid": "choose-database",
+    "name": "Choose Database",
+    "acl": {
+        "isFree": false,
+        "isFreeForStudents": false,
+        "productRequired": [
+            "infraexpert"
+        ],
+        "isAvailable": true
+    },
+    "releaseDate": "",
+    "isReleased": true,
+    "video": {
+        "vimeoId": "800651696",
+        "duration": 0,
+        "annotations": [],
+        "instructor": "",
+        "style": null
+    },
+    "prompt": "<p>You are the lead developer at a new fintech start up which is revolutionizing\n    the banking industry by providing peer-to-peer foreign currency exchange.\n    Choose the most suitable database & infrastructure for your application. </p>\n\n<h2>Follow-Up Questions</h2>\n<ol>\n    <li>Would you choose relational? Non-relational? In-memory? Why?</li>\n    <li>How will you access data in your chosen database?</li>\n    <li>How do you decide what backups and replication your database needs?</li>\n    <li>Explain when to use vertical or horizontal scaling, with specific use cases.</li>\n</ol>",
+    "walkthrough": [
+        {
+            "title": "Choosing a Database",
+            "content": "<p>\n  As with many infrastructure interview questions, we would want to probe\n  the interviewer for more information, gather system requirements and better\n  understand the situation to figure out the best solution. Understanding more\n  about the peer-to-peer foreign currency exchange and its requirements would\n  help determine which database would be best. We discuss some different\n  scenarios and suitable databases in the accompanying video.\n</p>\n<p>\n  The most suitable database for peer-to-peer foreign currency exchange\n  workloads would likely be a horizontally scalable relational database.\n  Though we would need additional components along with the relational database\n  to provide low latency response to users and high throughput of financial\n  calculations.\n</p>"
+        },
+        {
+            "title": "Would you choose relational? Non-relational? In-memory? Why?",
+            "content": "<p>\n  We'll go with a SQL database because all of the financial data that we'll be\n  dealing with (money orders, exchange rates, etc.) is, by nature, structured\n  and lends itself well to a relational model. Relational databases also often\n  offer more security benefits which are of utter importance when dealing with\n  any financial data.\n</p>\n<p>\n  A relational database would be the best choice for recording transactions\n  in the peer-to-peer exchange activities because transactions must provide\n  strict ACID properties. However, the best answer in an interview would be to\n  also offer the option of using a non-relational database (for example\n  Elasticsearch or\n  InfluxDb) for part of the system in order to offer higher read speeds and\n  throughput.\n  Non-relational DBs are great for storing results of complex financial\n  calculations, and can even\n  handle semi structured data like logs with high Read to Write ratio. We can\n  create a system which takes advantage of the benefits of each type of Database\n  for different parts of the system. We discuss some different\n  scenarios and suitable databases in the accompanying video.\n</p>\n<p>\n  An in-memory database such as Redis or Elasticache would also be great for\n  storing sessions\n  to allow for low latency and a scalable service. Another great option is\n  Apache Spark for\n  data analytics workloads to provide dynamic reporting needs like fraud\n  detection to company executives.\n</p>"
+        },
+        {
+            "title": "How will you access data in your chosen database?",
+            "content": "<p>\n  Data can be accessed by leveraging one of the interfaces exposed\n  by the database. We can categorize the access in Read and Write mode\n  to manage availability, latency, quality, freshness, durability and\n  correctness. Isolating write from read is crucial to ensure reliability of the\n  system. With our relational database, we would mainly access data through\n  queries, tables and orms.\n\n</p>"
+        },
+        {
+            "title": "How do you decide what backups and replication your database needs?",
+            "content": "<p>\n  To decide upon backup and replication needs, we need to apply the following\n  principles:\n  First, there must be a single source of truth of system context and there must\n  be no single point of failure. All stateful services must be replicated across\n  independent\n  hardware and network resources. There must be a backup strategy to mitigate\n  reliability\n  and security related incidents. A good strategy would be to backup data on a\n  regular schedule, persistently, but you must probe the interviewer for more\n  information if you are asked this in an interview in order to understand what\n  the optimal schedule might be and how you can acheive the criteria mentioned\n  above.\n</p>"
+        },
+        {
+            "title": "Explain when to use vertical or horizontal scaling, with specific use cases.",
+            "content": "<p>\n  We would use vertical scaling when the use case requires specialized\n  hardware or there\u2019s a legacy application that can\u2019t be horizontally scaled\n  yet.\n  We would use horizontal scaling to optimize utilization, cost, efficiency and\n  redundancy for reliability. For vertical scaling the use case would be a\n  machine\n  learning workload involving high definition images that require GPU for\n  processing.\n  For horizontal scaling the use-case would be processing of batch data for\n  analytics.\n  If we are implementing a microservices architecture, we would use Horizontal\n  scaling for adding more microservices and Vertical for adding more resources\n  to a microservice.\n</p>"
+        }
+    ],
+    "hints": []
+}

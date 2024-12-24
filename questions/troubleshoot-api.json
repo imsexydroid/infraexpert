@@ -1,0 +1,45 @@
+{
+    "uid": "troubleshoot-api",
+    "name": "Troubleshoot API",
+    "acl": {
+        "isFree": false,
+        "isFreeForStudents": false,
+        "productRequired": [
+            "infraexpert"
+        ],
+        "isAvailable": true
+    },
+    "releaseDate": "",
+    "isReleased": true,
+    "video": {
+        "vimeoId": "806618930",
+        "duration": 0,
+        "annotations": [],
+        "instructor": "",
+        "style": null
+    },
+    "prompt": "<p> When your local service is pushed up to a cloud host, you are unable to get\n    answers from its API. Troubleshoot the issue. </p>\n\n<h2>Follow-Up Questions</h2>\n<ol>\n    <li>What tools or commands on Linux would help you with this issue?</li>\n    <li>Explain how you would use traceroute and hops to find the issue.</li>\n    <li>What are some workarounds or mitigations for this issue so that endpoints do not need to be aware of underlying networking details?</li>\n    <li>Describe Public & private keys. How can this knowledge help in troubleshooting this issue?</li>\n</ol>",
+    "walkthrough": [
+        {
+            "title": "Troubleshoot the issue.",
+            "content": "<p>\n    As with many infrastructure interview questions, we would want to probe\n    the interviewer for more information, gather more information about the current system and better\n    understand the situation to figure out the best solution. Understanding more\n    about the system, the API we are connecting to, as well as the cloud architecture. Once, we have more information about the system, we can make better suggestions as to what the root cause might be. \n<p>\n<p>\n    If the interviewer does not provide much additional information, I would start by checking the health check report of the service running behind the API.\n    I\u2019d check for alerts, monitoring logs and server logs in that order to\n    identify the reason and further troubleshoot the issue.  \n</p>"
+        },
+        {
+            "title": "What tools or commands on linux would help you with this?",
+            "content": "<p>\n    To name a few, traceroute, netstat -tulpen, cloud cli, cat /proc/.., ssh -i <pem-file> \u2026. \n            (possibly others like splunk, datadog, ELK, etc.) Many tools would be correct answers here. As long as you can justify why you would suggest using a certain tool, any answer can be correct. \n</p>"
+        },
+        {
+            "title": "Explain how you would use traceroute and hops to find the issue.",
+            "content": "<p>\n    I\u2019d traceroute to the service to see the hops at which the\n    communication is broken. Maybe analyzing each hop for RTT, latency & TTL would help as well if no hop was broken. If the chain of hops was broken at any point, we can immediately know that is what is causing the API to have no response. \n</p>"
+        },
+        {
+            "title": "What are some workarounds or mitigations for this issue so that endpoints do not need to be aware of underlying networking details?",
+            "content": "<p>\n    There are many soltions and workarounds to this issue, such as using containerisation, using managed\n    services, perhaps using Kubernetes with a service mesh etc.. Any solution that decouples the application from the endpoint so that\n    endpoints do not need to be aware of underlying networking details is a good solution. \n</p>"
+        },
+        {
+            "title": "Describe public & private keys. How can this knowledge help in troubleshooting this issue?",
+            "content": "<p>\n    Public keys for non-repudiation (assuring identity) and private keys are for encrypting\n    outgoing data after a secure connection is established. A private\n    key is not shared in a connection. If the issue is related to\n    TLS/SSL termination then the public-private cryptography can reveal\n    logs are the terminal end of the encrypted channel. We can check these logs to further troubleshoot if necessary. \n</p>"
+        }
+    ],
+    "hints": []
+}

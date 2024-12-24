@@ -1,0 +1,37 @@
+{
+    "uid": "ec2-instance",
+    "name": "EC2 Instance",
+    "acl": {
+        "isFree": false,
+        "isFreeForStudents": false,
+        "productRequired": [
+            "infraexpert"
+        ],
+        "isAvailable": true
+    },
+    "releaseDate": "",
+    "isReleased": true,
+    "video": {
+        "vimeoId": "805383444",
+        "duration": 0,
+        "annotations": [],
+        "instructor": "",
+        "style": null
+    },
+    "prompt": "<p>\n  You are setting up an EC2 instance to run your web app. Explain how you would\n  go about setting this up. If you are unfamiliar with EC2, feel free to use\n  GCP, Azure or another cloud provider's solution to explain.\n</p>\n\n<h2>Follow-Up Questions</h2>\n<ol>\n  <li>How have you optimized the EC2 instance's resource utilization to minimize costs or maximize performance?</li>\n  <li>What steps have you taken to ensure high availability and reliability of the EC2 instance, such as preventing downtime or data loss?</li>\n  <li>How have you implemented security and compliance measures for the EC2 instance, such as implementing access controls or ensuring data privacy?</li>\n</ol>",
+    "walkthrough": [
+        {
+            "title": "How have you optimized the EC2 instance's resource utilization to minimize costs or maximize performance?",
+            "content": "<ul>\n  <li>To optimize the EC2 instance's resource utilization, I would start by analyzing the workload to determine the appropriate instance type, CPU and memory configurations. Based on the workload requirements, I would select the instance type that can provide the required performance while minimizing costs.</li>\n  <li>I would then monitor the instance's performance using CloudWatch or other monitoring tools, and adjust the instance's configuration as needed to optimize performance and reduce costs. For example, if the instance is over-provisioned for CPU or memory, I would adjust the settings to reduce the instance size and save on costs. Alternatively, if the instance is under-provisioned, I would adjust the settings to increase the size and improve performance.</li>\n  <li>I would also use auto scaling groups to scale resources up or down based on demand. By using auto scaling groups, I can ensure that the number of instances running matches the demand, which helps to optimize resource utilization and minimize costs. For example, during periods of high traffic, the auto scaling group would add additional instances to handle the load, and during periods of low traffic, the group would remove instances to save on costs.</li>\n</ul>"
+        },
+        {
+            "title": "What steps have you taken to ensure high availability and reliability of the EC2 instance, such as preventing downtime or data loss?",
+            "content": "<ul>\n  <li>To ensure high availability and reliability of the EC2 instance, I would configure the instance to use multiple availability zones to ensure that resources are distributed across multiple physical locations. This helps to prevent downtime in case of a failure in one availability zone.</li>\n  <li>I would also implement backup and disaster recovery strategies to protect against data loss. For example, I would use EBS snapshots or replicate data to another region to ensure that I have a copy of the data in case of an outage. I would also ensure that I have a disaster recovery plan in place, which includes regular testing and validation of the plan.</li>\n  <li>Finally, I would use monitoring and alerting tools to detect and respond to any issues quickly. For example, I would use CloudWatch to monitor the instance's performance and set up alerts for any issues that could cause downtime or data loss. By monitoring the instance's performance, I can detect issues before they become critical and take action to resolve them quickly.</li>\n</ul>"
+        },
+        {
+            "title": "How have you implemented security and compliance measures for the EC2 instance, such as implementing access controls or ensuring data privacy?",
+            "content": "<ul>\n  <li>To implement security and compliance measures for the EC2 instance, I would configure security groups to control inbound and outbound traffic and implement access controls to restrict access to sensitive data. By using security groups, I can ensure that only authorized traffic is allowed to access the instance, which helps to prevent unauthorized access.</li>\n  <li>I would also implement data encryption measures, such as using AWS Key Management Service to manage encryption keys. By encrypting sensitive data, I can ensure that data is protected in transit and at rest.</li>\n  <li>Finally, I would use auditing and logging tools to monitor and track access to sensitive data, and implement security testing and vulnerability scanning tools to detect and remediate any security issues. By monitoring access to sensitive data, I can detect unauthorized access and take action to prevent data breaches. By using security testing and vulnerability scanning tools, I can identify potential security issues and take action to address them before they can be exploited.</li>\n</ul>"
+        }
+    ],
+    "hints": []
+}

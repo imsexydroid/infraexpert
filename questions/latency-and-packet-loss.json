@@ -1,0 +1,41 @@
+{
+    "uid": "latency-and-packet-loss",
+    "name": "Latency And Packet Loss",
+    "acl": {
+        "isFree": false,
+        "isFreeForStudents": false,
+        "productRequired": [
+            "infraexpert"
+        ],
+        "isAvailable": true
+    },
+    "releaseDate": "",
+    "isReleased": true,
+    "video": {
+        "vimeoId": "797887805",
+        "duration": 0,
+        "annotations": [],
+        "instructor": "",
+        "style": null
+    },
+    "prompt": "<p> You notice that your application is experiencing high latency and packet loss. What can you do? </p>\n\n<h2>Follow-Up Questions</h2>\n<ol>\n    <li>Explain what tools or troubleshooting steps you would use to find the root cause of the networking issues.</li>\n    <li>How do you handle scaling issues related to network congestion?</li>\n    <li>How do you ensure that your network devices are configured for optimal performance and availability?</li>\n</ol>",
+    "walkthrough": [
+        {
+            "title": "Troubleshoot the issue.",
+            "content": "<p>\n    As with many infrastructure interview questions, we might want to probe\n    the interviewer for more information, gather more information about the\n    application in order to better\n    understand the system & situation. Once, we have more information about the\n    app, we can make better suggestions as to what the root cause might be and\n    figure out the best solution.\n    <p>\n<p>One of the first steps to take when encountering high latency and\npacket loss is to determine the source of the issue. This can be\ndone by using network monitoring and troubleshooting tools such as\nWireshark, tcpdump or Netflow to capture and analyze network traffic\nto identify any issues with connectivity or packet loss.\nAdditionally, you can use tools like traceroute and ping to\ndetermine if the issue is specific to a certain network segment or\ndevice.</p>\n<p>Another important step is to check the network infrastructure-related\nlogs and metrics, such as system logs, CPU utilization, memory\nusage, and disk usage to see if there is any correlation with the\nhigh latency and packet loss. In case the issue is not related to\nthe infrastructure, then you need to check on the application side,\nby checking the application logs and metrics.</p>\n<p>In case the issue is related to the infrastructure, you should\nanalyze the network topology and configurations of the network\ndevices, and check for any misconfigurations or outdated software.\nYou may also need to check for any network congestion and take steps\nto address it.</p>\n<p>Packet loss could be addressed by\nensuring Linux Kernel version is higher than 4.9 because Bottleneck\nBandwidth and RTT(BBR), which is a TCP congestion control algorithm\nthat got implemented in this version. This algorithm provides\nimproved latency and throughput control over networks that\nexperience packet loss.</p>"
+        },
+        {
+            "title": "Explain what tools or troubleshooting steps you would use to find the root cause of the networking issues.",
+            "content": "\n<div>\n    <h3>To troubleshoot networking issues:</h3>\n    <ul>\n      <li>Utilize network monitoring and troubleshooting tools such as Wireshark, tcpdump, Netflow, iperf, traceroute and ping to capture and analyze network traffic, and determine if the issue is related to connectivity or packet loss. </li>\n      <li>Check network infrastructure-related logs and metrics like system logs, CPU utilization, memory usage, and disk usage.</li>\n    </ul>\n    <h3>To handle scaling issues related to network congestion:</h3>\n    <ul>\n      <li>Identify the source of the congestion using network monitoring and troubleshooting tools. </li>\n      <li>Increase the capacity of the network devices, implement traffic shaping/QoS, and load balancing to better manage and prioritize network traffic.</li>\n      <li>Implement buffering on both sender and receiver sides to mitigate congestion at each level of interaction in the network.</li>\n    </ul>\n  </div>\n<p>When troubleshooting networking issues, there are several tools and\ntechniques that can be used to identify the root cause. One of the\nfirst steps is to use network monitoring and troubleshooting tools\nsuch as ***iperf***, tcpdump , Netflow or Wireshark to capture and\nanalyze network traffic to identify any issues with connectivity or\npacket loss. Additionally, tools like traceroute and ping can be\nused to determine if the issue is specific to a certain network\nsegment or device.</p>\n<p>Another important step is to check the network infrastructure-related\nlogs and metrics, such as system logs, CPU utilization, memory\nusage, and disk usage to see if there is any correlation with the\nhigh latency and packet loss. This can"
+        },
+        {
+            "title": "How do you handle scaling issues related to network congestion?",
+            "content": "    When troubleshooting networking issues, several tools and techniques can be utilized to find the root cause. Some steps include:\n    </p>\n    <ol>\n        <li>Using network monitoring and troubleshooting tools such as Wireshark, tcpdump, Netflow, traceroute, and ping to capture and analyze network traffic and determine any issues with connectivity or packet loss.</li>\n        <li>Checking network infrastructure-related logs and metrics, such as system logs, CPU utilization, memory usage, and disk usage to see if there is any correlation with the issues.</li>\n        <li>Analyzing network topology and configurations of the network devices, checking for any misconfigurations or outdated software, and verifying if there is any network congestion.</li>\n        <li>Running diagnostic tests such as iperf to measure network performance and identify any bottlenecks.</li>\n    </ol>\n    <p>\n    These steps can help to isolate the root cause of the issues and determine the best course of action to resolve them.\n    </p>\n<p>One can also use the architectural concept of buffering on\nsender and receiver side at each level of interaction in the\nnetwork.</p>"
+        },
+        {
+            "title": "How do you ensure that your network devices are configured for optimal performance and availability?",
+            "content": "<div>\n    <h3>Ensuring Optimal Performance and Availability of Network Devices</h3>\n    <p>To ensure optimal performance and availability of network devices, it is important to regularly monitor and analyze their performance and identify areas that need improvement. This can be done through various tools and techniques, including:</p>\n    <ul>\n      <li>\n        <p><b>Network Monitoring and Troubleshooting Tools:</b> Tools like Wireshark, tcpdump, Netflow, Traceroute, and ping can be used to capture and analyze network traffic, identify issues with connectivity or packet loss, and determine if the issue is specific to a certain network segment or device. Other tools like Prometheus, Grafana, or Datadog can also be used for network monitoring and analysis.</p>\n      </li>\n      <li>\n        <p><b>Implementing Network Security Best Practices:</b> To protect network devices from external threats, it is important to implement network security best practices.</p>\n      </li>\n      <li>\n        <p><b>Regularly Updating Firmware and Configurations:</b> Regularly reviewing and updating network devices' firmware, operating system, and configurations is important for optimal performance and availability. A good backup and disaster recovery plan is also important in case of failures.</p>\n      </li>\n      <li>\n        <p><b>Monitoring and Alerting:</b> It is essential to have monitoring and alerting in place to quickly identify and address any issues with network devices. Monitoring tools can provide alerts for any issues that arise.</p>\n      </li>\n    </ul>\n  </div>"
+        }
+    ],
+    "hints": []
+}
